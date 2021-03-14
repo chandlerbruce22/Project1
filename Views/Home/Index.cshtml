@@ -1,0 +1,12 @@
+﻿@model IEnumerable<TourGroup>
+
+<p>Welcome to Sign Up Genius 2.0!</p>
+
+<ul>
+    @foreach (var x in Model)
+    {
+        <li>@x.TourName , @x.TourSize , @x.Email</li>
+    }
+</ul>
+
+

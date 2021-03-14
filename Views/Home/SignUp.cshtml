@@ -1,0 +1,23 @@
+﻿@model TourGroup
+
+<form asp-action="SignUp" method="post">
+    <label asp-for="TourName">Name of Group</label>
+    <input asp-for="TourName"/>
+    <br />
+
+    <label asp-for="TourSize">Size of Group</label>
+    <input asp-for="TourSize"/>
+    <br />
+
+    <label asp-for="Email">Email Address</label>
+    <input asp-for="Email"/>
+    <br />
+
+    <label asp-for="PhoneNumber">Phone Number</label>
+    <input asp-for="PhoneNumber"/>
+    <br />
+
+    <button type="submit">Reserve</button>
+
+    <div asp-validation-summary="All"></div>
+</form>
