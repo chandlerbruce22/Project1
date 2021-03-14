@@ -11,6 +11,8 @@ namespace Project1.Models
         public TourDbContext (DbContextOptions<TourDbContext> options) : base (options)
         { }
 
-        public DbSet <TourGroup> Tours { get; set; }
+        public DbSet <Tour> Tours { get; set; }
+
+        public DbSet <TourGroup> TourGroups { get; set; }
     }
 }

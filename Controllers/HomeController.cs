@@ -10,15 +10,18 @@ namespace Project1.Controllers
     public class HomeController : Controller
     {
         private TourDbContext context { get; set; }
+
+        private ITourRepo _repository;
         //Constructor
-        public HomeController(TourDbContext con)
+        public HomeController(TourDbContext con, ITourRepo repository)
         {
             context = con;
+            _repository = repository;
         }
 
         public IActionResult Index()
         {
-            return View(context.Tours);
+            return View(_repository.Tours);
         }
         [HttpGet]
         public IActionResult SignUp()
@@ -30,15 +33,15 @@ namespace Project1.Controllers
         {
             if (ModelState.IsValid)
             {
-                context.Tours.Add(t);
+                context.TourGroups.Add(t);
                 context.SaveChanges();
             }
             return View();
         }
 
-        public IActionResult SignUpTime()
+        public IActionResult Groups()
         {
-            return View();
+            return View(context.TourGroups);
         }
     }
 }

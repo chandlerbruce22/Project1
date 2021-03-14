@@ -1,0 +1,8 @@
+﻿@model IEnumerable<TourGroup>
+
+<ul>
+    @foreach (var x in Model)
+    {
+        <li>@x.TourName , @x.TourSize , @x.Email</li>
+    }
+</ul>

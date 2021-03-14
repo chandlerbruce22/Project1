@@ -1,11 +1,13 @@
-﻿@model IEnumerable<TourGroup>
+﻿@model IEnumerable<Tour>
+
 
 <p>Welcome to Sign Up Genius 2.0!</p>
+<p>Sign up for a tour<a asp-action="SignUp" method="get"> HERE!</a> </p>
 
 <ul>
     @foreach (var x in Model)
     {
-        <li>@x.TourName , @x.TourSize , @x.Email</li>
+        <li>@x.TourTime</li>
     }
 </ul>
 

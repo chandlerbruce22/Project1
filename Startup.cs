@@ -27,10 +27,13 @@ namespace Project1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
             services.AddDbContext<TourDbContext>(options =>
             {
                 options.UseSqlite(Configuration["ConnectionStrings:TaskListConnection"]);
             });
+
+            services.AddScoped<ITourRepo, EFTourRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +50,8 @@ namespace Project1
             {
                 endpoints.MapDefaultControllerRoute();
             });
+
+            SeedData.EnsurePopulated(app);
         }
     }
 }
